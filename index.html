@@ -1,481 +1,582 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MindHive Privacy Policy - how the brain-training app collects, uses, stores and protects your data.">
-  <title>MindHive · Privacy Policy</title>
-  <style>
-    :root {
-      --bg-deep: #07040D;
-      --bg: #0B0712;
-      --surface: #150D22;
-      --surface-hi: #1F1533;
-      --line: #2C2144;
-      --accent: #FF7AD1;
-      --ink: #F4F4F1;
-      --prose: #CFC3E3;
-      --dim: #A795C4;
-      --mist: #7A6A99;
-      --soft: #2E2350;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: var(--bg-deep);
-      color: var(--ink);
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.7;
-    }
-    .bg {
-      position: fixed; inset: 0; z-index: -1;
-      background:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,122,209,0.16), transparent),
-        radial-gradient(ellipse 60% 40% at 90% 110%, rgba(167,139,250,0.10), transparent),
-        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 55%, var(--bg-deep) 100%);
-    }
-    .wrap { max-width: 780px; margin: 0 auto; padding: 40px 22px 80px; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindHive · Privacy Policy</title>
+<style>
+  :root {
+    --bg-deep: #060309;
+    --bg: #0B0712;
+    --surface: #150D22;
+    --surface-2: #1C1130;
+    --surface-3: #241739;
+    --line: #2C2144;
+    --line-soft: #241A38;
+    --accent: #FF7AD1;
+    --accent-2: #A78BFA;
+    --accent-soft: rgba(255,122,209,.12);
+    --ink: #F4F4F1;
+    --prose: #CFC3E3;
+    --dim: #A795C4;
+    --mist: #7A6A99;
+    --red: #F24A4A;
+    --tb: rgba(18,12,28,.82);
+    --win-shadow: 0 18px 60px rgba(0,0,0,.65), 0 0 0 1px rgba(255,255,255,.04);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
+  body {
+    font-family: "Segoe UI Variable", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink); background: #000; -webkit-font-smoothing: antialiased; user-select: none;
+  }
 
-    /* ── Top nav ─────────────────────────────────────────────────── */
-    header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
-    .brand { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
-    .brand em { font-style: normal; color: var(--accent); }
-    .ver { margin-left: auto; font-size: 11px; letter-spacing: 1px; color: var(--dim); background: var(--surface); border: 1px solid var(--line); padding: 7px 14px; border-radius: 999px; font-weight: 600; }
+  /* ── Desktop ────────────────────────────────────────────────── */
+  .desktop {
+    position: relative; height: 100%; width: 100%;
+    background:
+      radial-gradient(ellipse 85% 55% at 50% -12%, rgba(255,122,209,.28), transparent 55%),
+      radial-gradient(ellipse 60% 45% at 88% 108%, rgba(167,139,250,.22), transparent 60%),
+      radial-gradient(ellipse 40% 35% at 6% 96%, rgba(255,122,209,.10), transparent 55%),
+      linear-gradient(180deg, #0D0817 0%, #07040D 55%, #050308 100%);
+    overflow: hidden;
+  }
+  .desktop::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background:
+      radial-gradient(1.5px 1.5px at 12% 18%, rgba(244,244,241,.10) 50%, transparent 52%),
+      radial-gradient(1.5px 1.5px at 78% 32%, rgba(244,244,241,.08) 50%, transparent 52%),
+      radial-gradient(1.5px 1.5px at 34% 62%, rgba(244,244,241,.07) 50%, transparent 52%),
+      radial-gradient(1.5px 1.5px at 64% 80%, rgba(244,244,241,.06) 50%, transparent 52%),
+      radial-gradient(1.5px 1.5px at 88% 12%, rgba(244,244,241,.07) 50%, transparent 52%);
+    opacity: .6;
+  }
 
-    nav.toc {
-      display: flex; flex-wrap: wrap; gap: 8px;
-      margin: 28px 0 40px;
-    }
-    nav.toc a {
-      font-size: 12px; text-decoration: none; color: var(--prose);
-      background: var(--surface); border: 1px solid var(--line);
-      padding: 7px 13px; border-radius: 999px; transition: all .18s;
-    }
-    nav.toc a:hover { color: var(--ink); border-color: var(--accent); background: var(--surface-hi); }
+  /* ── Desktop icons ──────────────────────────────────────────── */
+  .desktop-icons {
+    position: absolute; top: 16px; left: 12px; display: flex; flex-direction: column; gap: 14px; z-index: 5;
+  }
+  .dicon {
+    display: flex; flex-direction: column; align-items: center; gap: 6px; width: 74px;
+    padding: 9px 4px 7px; border-radius: 6px; cursor: pointer;
+    -webkit-backdrop-filter: blur(0);
+    transition: background .15s, transform .06s;
+  }
+  .dicon:hover { background: rgba(255,255,255,.10); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+  .dicon:active { background: rgba(255,255,255,.16); transform: scale(.97); }
+  .dicon svg { width: 34px; height: 34px; filter: drop-shadow(0 2px 4px rgba(0,0,0,.5)); }
+  .dicon span {
+    font-size: 11px; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,.85);
+    text-align: center; line-height: 1.25;
+  }
+  .dicon.selected { outline: 1.5px solid rgba(255,255,255,.85); background: rgba(255,255,255,.10); }
 
-    /* ── Hero ────────────────────────────────────────────────────── */
-    .hero { margin-bottom: 44px; }
-    .kicker { font-size: 11px; letter-spacing: 2.2px; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
-    h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; letter-spacing: -1px; line-height: 1.12; margin-bottom: 16px; }
-    h1 span { color: var(--accent); }
-    .lead { font-size: 16px; color: var(--prose); }
-    .meta {
-      margin-top: 22px; padding: 14px 18px; display: flex; flex-wrap: wrap; gap: 8px 24px;
-      background: var(--surface); border: 1px solid var(--line); border-radius: 14px; font-size: 12.5px; color: var(--dim);
-    }
-    .meta b { color: var(--ink); font-weight: 600; }
+  /* ── Window (Settings-app style) ────────────────────────────── */
+  .win {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+    width: min(980px, 92vw); height: min(660px, 88vh);
+    background: rgba(19,12,30,.86);
+    -webkit-backdrop-filter: blur(42px) saturate(160%); backdrop-filter: blur(42px) saturate(160%);
+    border: 1px solid rgba(255,255,255,.09);
+    border-radius: 8px; overflow: hidden; box-shadow: var(--win-shadow);
+    display: flex; flex-direction: column; z-index: 10;
+    opacity: 1; transition: opacity .22s, transform .22s cubic-bezier(.2,.9,.3,1);
+  }
+  .win.closed { opacity: 0; transform: translate(-50%,-46%) scale(.96); pointer-events: none; }
+  .win.max { width: 100%; height: calc(100% - 48px); top: 0; left: 0; transform: none; border-radius: 0; }
+  .win.max.closed { transform: translateY(6px); }
 
-    /* ── Sections ────────────────────────────────────────────────── */
-    section { margin-bottom: 26px; }
-    article.card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
-      padding: 26px; margin-bottom: 16px;
-    }
-    article.card .sec-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-top: 7px; flex: none; box-shadow: 0 0 12px rgba(255,122,209,0.6); }
-    h2 { font-size: 15px; font-weight: 700; letter-spacing: 0.4px; color: var(--accent); }
-    h2 small { display: block; font-size: 11px; letter-spacing: 1.2px; color: var(--mist); margin-top: 3px; font-weight: 600; }
-    article.card p, article.card li { font-size: 14.5px; color: var(--prose); }
-    article.card p { margin-bottom: 10px; }
-    article.card p:last-child { margin-bottom: 0; }
-    article.card ul { padding-left: 18px; }
-    article.card li { margin-bottom: 6px; }
-    .note {
-      border-left: 3px solid var(--accent); background: rgba(255,122,209,0.06);
-      border-radius: 0 12px 12px 0; padding: 14px 16px; margin-top: 12px; font-size: 13px; color: var(--dim);
-    }
-    .tbl { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 13.5px; }
-    .tbl th, .tbl td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--prose); vertical-align: top; }
-    .tbl th { color: var(--accent); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+  /* Title bar */
+  .win-title {
+    height: 40px; flex: none; display: flex; align-items: center; justify-content: space-between;
+    padding-left: 10px; cursor: inherit;
+  }
+  .win-title-left { display: flex; align-items: center; gap: 8px; height: 100%; }
+  .nav-back {
+    width: 34px; height: 34px; display: flex; align-items: center; justify-content: center;
+    border-radius: 4px; color: var(--dim); cursor: pointer; background: none; border: none;
+  }
+  .nav-back:hover { background: rgba(255,255,255,.08); color: var(--ink); }
+  .nav-back svg { width: 15px; height: 15px; }
+  .crumb {
+    display: flex; align-items: center; gap: 4px; font-size: 12.5px; color: var(--dim); height: 28px;
+    border: 1px solid transparent; padding: 0 8px; border-radius: 4px;
+  }
+  .crumb:hover { border-color: rgba(255,255,255,.14); }
+  .crumb .sep { color: var(--mist); margin: 0 2px; font-size: 11px; }
+  .crumb .cur { color: var(--ink); }
 
-    /* ── Footer ──────────────────────────────────────────────────── */
-    footer { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
-    footer p { font-size: 12.5px; color: var(--mist); margin-bottom: 8px; }
-    footer .status { display: inline-block; font-size: 11px; color: var(--accinent, var(--accent)); letter-spacing: 1px; }
+  /* Caption controls */
+  .win-controls { display: flex; height: 100%; }
+  .cap {
+    width: 46px; height: 100%; display: flex; align-items: center; justify-content: center;
+    background: none; border: none; color: var(--dim); cursor: pointer; transition: background .12s;
+  }
+  .cap svg { width: 12px; height: 12px; }
+  .cap:hover { background: rgba(255,255,255,.10); color: var(--ink); }
+  .cap.close:hover { background: var(--red); color: #fff; }
 
-    @media (max-width: 480px) {
-      .wrap { padding-top: 24px; }
-      article.card { padding: 20px; }
-    }
-  </style>
+  .win-body { flex: 1; display: flex; min-height: 0; }
+
+  /* ── Navigation rail (Windows 11 Settings) ──────────────────── */
+  .rail {
+    width: 220px; flex: none; overflow-y: auto; padding: 14px 8px 18px; display: flex; flex-direction: column; gap: 2px;
+    scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent;
+  }
+  .rail::-webkit-scrollbar { width: 4px; }
+  .rail::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 2px; }
+  .nav-item {
+    display: flex; align-items: center; gap: 12px; width: 100%;
+    padding: 10px 12px; border-radius: 4px; cursor: pointer; border: none; background: transparent;
+    color: var(--prose); font-size: 13px; font-family: inherit; text-align: left;
+    transition: background .12s;
+  }
+  .nav-item svg { width: 19px; height: 19px; flex: none; color: var(--dim); transition: color .12s; }
+  .nav-item:hover { background: rgba(255,255,255,.06); }
+  .nav-item.active { background: var(--accent-soft); color: var(--ink); }
+  .nav-item.active svg { color: var(--accent); }
+  .nav-sep { height: 1px; background: var(--line-soft); margin: 8px 12px; }
+
+  /* ── Content pane ───────────────────────────────────────────── */
+  .content { flex: 1; min-width: 0; overflow-y: auto; padding: 26px 34px 46px; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.18) transparent; }
+  .content::-webkit-scrollbar { width: 5px; }
+  .content::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 3px; }
+
+  .pane { display: none; animation: paneIn .24s ease; }
+  .pane.show { display: block; }
+  @keyframes paneIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+  .pane-title { font-size: 27px; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 4px; }
+  .pane-sub { color: var(--dim); font-size: 13px; margin-bottom: 22px; }
+  .pane-sub b { color: var(--accent); font-weight: 600; }
+
+  .card {
+    background: var(--surface-2); border: 1px solid var(--line-soft); border-radius: 8px; margin-bottom: 16px; overflow: hidden;
+  }
+  .card-head { padding: 16px 20px 4px; }
+  .card-head h3 { font-size: 14.5px; font-weight: 600; margin-bottom: 3px; }
+  .card-head p { font-size: 12.5px; color: var(--dim); line-height: 1.5; }
+
+  .row {
+    display: flex; align-items: center; gap: 14px; padding: 13px 20px; cursor: default;
+    transition: background .1s;
+  }
+  .row:hover { background: rgba(255,255,255,.035); }
+  .row + .row { border-top: 1px solid var(--line-soft); }
+  .row-ic { width: 32px; height: 32px; flex: none; border-radius: 6px; display: flex; align-items: center; justify-content: center; background: var(--accent-soft); }
+  .row-ic svg { width: 17px; height: 17px; color: var(--accent); }
+  .row-txt { flex: 1; min-width: 0; }
+  .row-txt b { display: block; font-size: 13px; font-weight: 500; }
+  .row-txt span { display: block; font-size: 12px; color: var(--dim); line-height: 1.4; }
+  .row .chev { color: var(--mist); font-size: 15px; flex: none; }
+  .row .badge { font-size: 10.5px; padding: 3px 9px; border-radius: 999px; font-weight: 600; letter-spacing: .4px; }
+  .badge.b-on { background: rgba(255,122,209,.16); color: var(--accent); }
+  .badge.b-off { background: rgba(167,139,250,.14); color: var(--accent-2); }
+
+  /* Windows 11 toggle */
+  .toggle { position: relative; width: 40px; height: 20px; border-radius: 999px; background: rgba(255,255,255,.18); flex: none; transition: background .15s; }
+  .toggle::after { content: ""; position: absolute; top: 2px; left: 2px; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.4); transition: left .15s; }
+  .toggle.on { background: var(--accent); }
+  .toggle.on::after { left: 22px; }
+
+  .note {
+    display: flex; gap: 12px; background: var(--accent-soft); border: 1px solid rgba(255,122,209,.25);
+    border-radius: 8px; padding: 14px 16px; margin-bottom: 16px;
+  }
+  .note svg { width: 18px; height: 18px; color: var(--accent); flex: none; margin-top: 1px; }
+  .note p { font-size: 12.5px; color: var(--prose); line-height: 1.55; }
+  .note p b { color: var(--accent); }
+
+  .hero {
+    border-radius: 10px; padding: 22px 24px; margin-bottom: 20px; position: relative; overflow: hidden;
+    background: linear-gradient(120deg, rgba(255,122,209,.16), rgba(167,139,250,.10) 60%), var(--surface-2);
+    border: 1px solid rgba(255,122,209,.22);
+  }
+  .hero h2 { font-size: 22px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 6px; }
+  .hero h2 em { font-style: normal; color: var(--accent); }
+  .hero p { font-size: 13px; color: var(--prose); max-width: 560px; line-height: 1.6; }
+  .hero .tag { position: absolute; top: 16px; right: 18px; font-size: 10px; letter-spacing: 1.2px; color: var(--accent-2); }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+
+  .foot { margin-top: 18px; color: var(--mist); font-size: 11.5px; line-height: 1.6; }
+
+  /* ── Taskbar (Windows 11) ───────────────────────────────────── */
+  .taskbar {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 48px; z-index: 20;
+    background: var(--tb); -webkit-backdrop-filter: blur(30px) saturate(160%); backdrop-filter: blur(30px) saturate(160%);
+    border-top: 1px solid rgba(255,255,255,.06);
+    display: flex; align-items: center; justify-content: center; gap: 6px; padding: 0 12px;
+  }
+  .tb-group { display: flex; align-items: center; gap: 4px; }
+  .tb-start { margin-left: 0; }
+  .tb-start svg { width: 26px; height: 26px; }
+  .tb-btn {
+    width: 40px; height: 36px; border-radius: 4px; display: flex; align-items: center; justify-content: center;
+    border: none; background: none; color: var(--dim); cursor: pointer; transition: background .12s, color .12s;
+    position: relative;
+  }
+  .tb-btn:hover { background: rgba(255,255,255,.08); }
+  .tb-btn svg { width: 19px; height: 19px; }
+  .tb-btn.mh { color: var(--accent); }
+  .tb-btn.mh::after { content: ""; position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%); width: 6px; height: 2px; border-radius: 2px; background: var(--accent); }
+  .tb-search {
+    display: flex; align-items: center; gap: 8px; height: 32px; padding: 0 12px; border-radius: 18px; cursor: pointer;
+    background: rgba(255,255,255,.07); color: var(--dim); font-size: 12.5px; width: 220px; transition: background .12s;
+  }
+  .tb-search:hover { background: rgba(255,255,255,.13); }
+  .tb-search svg { width: 15px; height: 15px; }
+  .tb-spacer { flex: 1; }
+  .tb-tray { display: flex; align-items: center; gap: 2px; }
+  .tb-clock { text-align: right; padding: 0 8px; font-size: 11.5px; line-height: 1.3; color: var(--ink); cursor: default; }
+  .tb-clock b { display: block; font-weight: 500; }
+  .tb-clock small { display: block; color: var(--dim); }
+
+  /* Toast */
+  .toast {
+    position: fixed; right: 16px; bottom: 64px; z-index: 40;
+    background: var(--surface-3); border: 1px solid var(--line); border-radius: 8px;
+    padding: 12px 16px; font-size: 12.5px; box-shadow: var(--win-shadow);
+    display: flex; align-items: center; gap: 10px; color: var(--prose);
+    opacity: 0; transform: translateY(12px); transition: all .2s; pointer-events: none;
+  }
+  .toast.show { opacity: 1; transform: none; }
+  .toast svg { width: 16px; height: 16px; color: var(--accent); }
+
+  /* ── Responsive ─────────────────────────────────────────────── */
+  @media (max-width: 720px) {
+    .win { width: 100vw; height: calc(100vh - 48px); top: 0; left: 0; transform: none; border-radius: 0; border: none; }
+    .win.closed { transform: translateY(10px); }
+    .rail { width: 60px; padding: 12px 6px; align-items: center; }
+    .rail .nav-item { justify-content: center; padding: 10px 8px; }
+    .rail .nav-item .lbl { display: none; }
+    .content { padding: 20px 18px 36px; }
+    .tb-search { width: 40px; padding: 0; justify-content: center; }
+    .tb-search .stxt { display: none; }
+    .desktop-icons { flex-direction: row; top: auto; bottom: 60px; left: 8px; gap: 4px; }
+  }
+</style>
 </head>
 <body>
-  <div class="bg"></div>
-  <div class="wrap">
+<div class="desktop">
 
-    <header>
-      <div class="brand">MindHive<em>.</em></div>
-      <div class="ver">LAST REVISED · 2026</div>
-    </header>
+  <!-- Desktop icons -->
+  <div class="desktop-icons">
+    <div class="dicon" data-icon="mindhive" onclick="openApp();selectIcon(this)">
+      <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="21" fill="url(#mhg)"/><path d="M24 12c-6 0-11 4-11 11 0 5 3.4 9.4 8.5 10.7V28a2 2 0 0 1 2-2h1v-2.5a2 2 0 0 1 4 0V26h1a2 2 0 0 1 2 2v5.7c5.1-1.3 8.5-5.7 8.5-10.7 0-7-5-11-11-11Zm-4 12.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="#0B0712"/><defs><linearGradient id="mhg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#FF7AD1"/><stop offset="1" stop-color="#A78BFA"/></linearGradient></defs></svg>
+      <span>MindHive</span>
+    </div>
+    <div class="dicon" data-icon="docs" onclick="toast('This PC stores your policy locally')">
+      <svg viewBox="0 0 48 48" fill="none"><rect x="12" y="8" width="24" height="32" rx="3" fill="url(#dkg)"/><rect x="17" y="16" width="14" height="2" rx="1" fill="#0B0712"/><rect x="17" y="22" width="14" height="2" rx="1" fill="#0B0712"/><rect x="17" y="28" width="9" height="2" rx="1" fill="#0B0712"/><defs><linearGradient id="dkg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#CFC3E3"/><stop offset="1" stop-color="#8E7BB8"/></linearGradient></defs></svg>
+      <span>Policy.docx</span>
+    </div>
+    <div class="dicon" data-icon="trash" onclick="toast('Empty bin comes with uninstall')">
+      <svg viewBox="0 0 48 48" fill="none"><path d="M18 14V9h12v5M10 14h28v4l-2 22H12L10 18z" stroke="#CFC3E3" stroke-width="3" stroke-linejoin="round" fill="none"/></svg>
+      <span>Recycle Bin</span>
+    </div>
+  </div>
 
-    <nav class="toc">
-      <a href="#overview">Overview</a>
-      <a href="#definitions">Definitions</a>
-      <a href="#data-collected">Data Collected</a>
-      <a href="#purposes">How We Use Data</a>
-      <a href="#ads">Advertising</a>
-      <a href="#purchases">Purchases</a>
-      <a href="#firebase">Firebase &amp; Sync</a>
-      <a href="#permissions">Permissions</a>
-      <a href="#children">Children</a>
-      <a href="#retention">Retention</a>
-      <a href="#rights">Your Rights</a>
-      <a href="#security">Security</a>
-      <a href="#changes">Changes</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <div class="hero">
-      <div class="kicker">MindHive Privacy Policy</div>
-      <h1>Your mind stays <span>yours.</span></h1>
-      <p class="lead">
-        MindHive is local-first. Your scores, streaks and training history live on your
-        device, not in a cloud you never asked for. This policy explains, in plain
-        language and full legal detail, what the app processes, why, and the controls
-        you hold over it.
-      </p>
-      <div class="meta">
-        <span><b>Effective date:</b> 1 January 2026</span>
-        <span><b>Jurisdiction:</b> Worldwide</span>
-        <span><b>Governing laws:</b> GDPR · CCPA · COPPA · COPPA-adjacent stores</span>
-        <span><b>Applies to:</b> com.mindhive.app (all platforms)</span>
+  <!-- Settings window -->
+  <div class="win" id="win">
+    <div class="win-title" ondblclick="maxWin()">
+      <div class="win-title-left">
+        <button class="nav-back" onclick="toast('You\'re already home')" title="Back"><svg viewBox="0 0 24 24" fill="none"><path d="M14.5 6l-6 6 6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        <div class="crumb"><span>MindHive</span><span class="sep">›</span><span class="cur" id="crumb">Overview</span></div>
+      </div>
+      <div class="win-controls">
+        <button class="cap" onclick="minWin()" title="Minimize"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="currentColor" stroke-width="1.4"/></svg></button>
+        <button class="cap" id="btnMax" onclick="maxWin()" title="Maximize"><svg viewBox="0 0 24 24" fill="none"><rect x="6" y="6" width="12" height="12" rx="1" stroke="currentColor" stroke-width="1.4"/></svg></button>
+        <button class="cap close" onclick="closeWin()" title="Close"><svg viewBox="0 0 24 24" fill="none"><path d="M7 7l10 10M17 7L7 17" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
       </div>
     </div>
 
-    <!-- ── 1 · Overview ─────────────────────────────────────────────── -->
-    <section id="overview">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>1 · Overview<small>WHAT THIS POLICY COVERS</small></h2>
-        </div>
-        <p>
-          MindHive (&ldquo;the App&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a
-          cognitive-training application. This Privacy Policy describes how the App
-          collects, uses, stores, shares and protects information when you download,
-          install and use it. It applies to all features of the App across every
-          supported device, including free gameplay, optional cloud sync and any
-          in-app purchases.
-        </p>
-        <p>
-          The App is designed around a <strong>local-first</strong> principle: core
-          training data is stored on your device and is never required to be shared
-          with us. You are never required to create an account, and no feature of the
-          training experience depends on providing personal information.
-        </p>
-        <div class="note">
-          By installing or using the App you agree to the practices described here.
-          If you do not agree, do not install or use the App, or uninstall it at any time.
-        </div>
-      </article>
-    </section>
+    <div class="win-body">
+      <!-- Nav rail -->
+      <nav class="rail" id="rail">
+        <button class="nav-item" data-pane="p-home" onclick="go('p-home')"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="lbl">Home</span></button>
+        <button class="nav-item" data-pane="p-overview" onclick="go('p-overview')"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 12l4-2M12 7.5v.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="lbl">At a glance</span></button>
+        <div class="nav-sep"></div>
+        <button class="nav-item" data-pane="p-local" onclick="go('p-local')"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6a4 4 0 0 1 4-3h8a4 4 0 0 1 4 3v12l-2 1-2-1-3.5 1.6h-1L8 19l-2 1-2-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 9v5m0 0l-2-2m2 2l2-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="lbl">Your data on device</span></button>
+        <button class="nav-item" data-pane="p-ads" onclick="go('p-ads')"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11h16l-3-5H7L4 11zM5 11l2 8h10l2-8" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 6v13" stroke="currentColor" stroke-width="1.6"/></svg><span class="lbl">Advertising</span></button>
+        <button class="nav-item" data-pane="p-purchase" onclick="go('p-purchase')"><svg viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.4 12.2A1 1 0 0 0 8.4 17h9.2a1 1 0 0 0 1-.8L21 7H6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="9.5" cy="20" r="1.3" stroke="currentColor" stroke-width="1.4"/><circle cx="17.5" cy="20" r="1.3" stroke="currentColor" stroke-width="1.4"/></svg><span class="lbl">Purchases</span></button>
+        <button class="nav-item" data-pane="p-sync" onclick="go('p-sync')"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M18 3v4h-4M6 21v-4h4" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg><span class="lbl">Sign-in &amp; sync</span></button>
+        <div class="nav-sep"></div>
+        <button class="nav-item" data-pane="p-choices" onclick="go('p-choices')"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18M7 5v4M12 9v10" stroke="currentColor" stroke-width="1.4"/></svg><span class="lbl">Your choices</span></button>
+        <button class="nav-item" data-pane="p-kids" onclick="go('p-kids')"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 21c.8-4 3-6 6.5-6s5.7 2 6.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="lbl">Families &amp; kids</span></button>
+        <button class="nav-item" data-pane="p-rights" onclick="go('p-rights')"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12l1.5 1.5L15 12" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span class="lbl">Your rights</span></button>
+        <button class="nav-item" data-pane="p-security" onclick="go('p-security')"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="10" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/></svg><span class="lbl">Security</span></button>
+        <button class="nav-item" data-pane="p-updates" onclick="go('p-updates')"><svg viewBox="0 0 24 24" fill="none"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 3v5h-5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="lbl">Policy updates</span></button>
+        <div class="nav-sep"></div>
+        <button class="nav-item" data-pane="p-contact" onclick="go('p-contact')"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M5 7l7 6 7-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg><span class="lbl">Contact</span></button>
+      </nav>
 
-    <!-- ── 2 · Definitions ──────────────────────────────────────────── -->
-    <section id="definitions">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>2 · Definitions<small>TERMS USED IN THIS POLICY</small></h2>
-        </div>
-        <ul>
-          <li><strong>Personal Data</strong> &mdash; information relating to an identified or identifiable natural person (e.g. a signed-in name or email address).</li>
-          <li><strong>Training Data</strong> &mdash; your in-app performance records: scores, accuracy, reaction times, session durations, streaks, unlocks and preferences.</li>
-          <li><strong>Device Data</strong> &mdash; technical information about the device such as OS version, model and app version, used for crash and analytics reporting.</li>
-          <li><strong>Local Storage</strong> &mdash; on-device storage (a Room/SQLite database and application preferences) that is not transmitted by default.</li>
-          <li><strong>Cloud Sync</strong> &mdash; the fully optional feature that mirrors Training Data to Firebase Firestore when you sign in with Google.</li>
-        </ul>
-      </article>
-    </section>
+      <!-- Panes -->
+      <main class="content" id="content">
 
-    <!-- ── 3 · Data Collected ───────────────────────────────────────── -->
-    <section id="data-collected">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>3 · Data We Process<small>WHAT IS COLLECTED AND WHERE IT LIVES</small></h2>
-        </div>
-        <table class="tbl">
-          <thead><tr><th>Category</th><th>Specific data</th><th>Storage</th><th>Sharing</th></tr></thead>
-          <tbody>
-            <tr>
-              <td><strong>Training Data</strong></td>
-              <td>Scores, accuracy, reaction times, momentum records, durations, streaks, unlocks, settings, reminders</td>
-              <td>On-device</td>
-              <td>Never, unless you opt in to Cloud Sync</td>
-            </tr>
-            <tr>
-              <td><strong>Purchase Confirmation</strong></td>
-              <td>Whether the &ldquo;Remove Ads&rdquo; non-consumable was purchased</td>
-              <td>On-device + Google (if synced)</td>
-              <td>Apple/Google Play &amp; Google billing servers</td>
-            </tr>
-            <tr>
-              <td><strong>Crash &amp; Analytics Data</strong></td>
-              <td>Device model, OS version, app version, anonymised crash traces, anonymised usage events</td>
-              <td>Firebase (when enabled in the build)</td>
-              <td>Google (Firebase Crashlytics/Analytics)</td>
-            </tr>
-            <tr>
-              <td><strong>Advertising Identifiers</strong></td>
-              <td>Mobile advertising identifiers, when ads are shown and you have not purchased Remove Ads</td>
-              <td>Ad networks</td>
-              <td>Google AdMob &amp; partners</td>
-            </tr>
-            <tr>
-              <td><strong>Contact / Identifying</strong></td>
-              <td>Google account name and email (only if you sign in)</td>
-              <td>Firebase Authentication / Firestore</td>
-              <td>Google</td>
-            </tr>
-          </tbody>
-        </table>
-        <p>
-          We do <strong>not</strong> process your contacts, location, photos, microphone,
-          biometrics or any sensitive special-category data. The App does not contain
-          simulated data &mdash; every number is measured from your own rounds.
-        </p>
-      </article>
-    </section>
+        <!-- Home -->
+        <section class="pane" id="p-home">
+          <div class="hero">
+            <div class="tag">WINDOWS · PREMIUM DARK</div>
+            <h2>Privacy Policy <em>·</em> MindHive</h2>
+            <p>The friendly, no-jargon guide to what the app does with your data. Pick a topic on the left — or simply read on. Everything is written for people, not lawyers.</p>
+          </div>
+          <div class="grid2">
+            <div class="card">
+              <div class="card-head"><h3>Quick answers</h3><p>Tap any row to jump to the full section.</p></div>
+              <div class="row" onclick="go('p-local')"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v12m0 0l-3-3m3 3l3-3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Where do my scores live?</b><span>On your phone. Only on your phone.</span></div><span class="chev">›</span></div>
+              <div class="row" onclick="go('p-ads')"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 10h16l-3-4H7l-3 4zm1 1l1.6 8h10.8L19 11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Ads?</b><span>Yes, unless you buy Remove Ads.</span></div><span class="chev">›</span></div>
+              <div class="row" onclick="go('p-sync')"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Do I need an account?</b><span>Never. Sign-in is totally optional.</span></div><span class="chev">›</span></div>
+              <div class="row" onclick="go('p-rights')"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Can I delete everything?</b><span>Yes — any time, in one tap.</span></div><span class="chev">›</span></div>
+            </div>
+            <div class="card">
+              <div class="card-head"><h3>Policy details</h3><p>Document status.</p></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 5h14v14H5z" stroke="currentColor" stroke-width="1.8"/><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="1.2"/></svg></div><div class="row-txt"><b>App</b><span>MindHive · com.mindhive.app</span></div><span class="badge b-on">v10.1.1</span></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Developer</b><span>QuranGen Labs</span></div><span class="chev">›</span></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 10h16" stroke="currentColor" stroke-width="1.4"/></svg></div><div class="row-txt"><b>Last updated</b><span>September 23, 2026</span></div><span class="chev">›</span></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l7 3v6c0 4.4-2.8 8-7 10-4.2-2-7-5.6-7-10V5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Status</b><span>In effect. No data sold. Ever.</span></div><span class="badge b-on">LIVE</span></div>
+            </div>
+          </div>
+          <p class="foot">In short: we build local-first software. Your mind stays yours, and this document explains exactly how that works.</p>
+        </section>
 
-    <!-- ── 4 · Purposes (legal bases) ───────────────────────────────── -->
-    <section id="purposes">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>4 · How We Use Your Data<small>PURPOSES AND LAWFUL BASIS</small></h2>
-        </div>
-        <p>We use the data described above for the following purposes:</p>
-        <ul>
-          <li><strong>Providing the service</strong> &mdash; to deliver, operate and personalise your training experience (contractual necessity).</li>
-          <li><strong>Syncing across devices</strong> &mdash; to mirror your Training Data and purchase entitlement when you voluntarily sign in (performance of the service you requested).</li>
-          <li><strong>Improving the product</strong> &mdash; to analyse anonymised crash and usage data, maintaining stability and performance (legitimate interest).</li>
-          <li><strong>Supporting the free app</strong> &mdash; to serve advertising and to process your optional Remove Ads purchase (legitimate interest / contract).</li>
-        </ul>
-        <p>
-          Where we rely on legitimate interest you may object at any time by disabling
-          the relevant feature (for example, not enabling Cloud Sync) or by uninstalling
-          the App.
-        </p>
-      </article>
-    </section>
+        <!-- Overview / At a glance -->
+        <section class="pane" id="p-overview">
+          <div class="pane-title">At a glance</div>
+          <p class="pane-sub">The whole policy, in three bullets — written for real people, not legal bots.</p>
+          <div class="note"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><p><b>In short:</b> We do not collect, store or sell your personal data ourselves. Your scores, streaks and settings are saved only on your own device, and we never create an account for you unless you choose to sign in. Partners (Google Ads &amp; Google Play) may collect limited data to serve ads or process a purchase.</p></div>
+          <div class="card">
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11l8-7 8 7v9a1 1 0 0 1-1 1h-5v-6h-4v6H5a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Local first</b><span>Training data stays on your device by default.</span></div><span class="badge b-on">ON</span></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>No account required</b><span>Train forever with zero sign-up.</span></div><span class="badge b-on">ALWAYS</span></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11h18l-3-4H6L3 11z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 11v8" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>No data selling</b><span>We sell nothing. Not your scores, not your info.</span></div><span class="badge b-on">NEVER</span></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="M8 4v6M12 4v6M16 4v6" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Full control</b><span>Export, sign out, or delete any time.</span></div><span class="badge b-on">YOURS</span></div>
+          </div>
+        </section>
 
-    <!-- ── 5 · Advertising ──────────────────────────────────────────── -->
-    <section id="ads">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>5 · Advertising<small>ADMOB · REWARDED · INTERSTITIAL · BANNER</small></h2>
-        </div>
-        <p>
-          The App is demonetised through <strong>Google AdMob</strong>. When advertising
-          is enabled (i.e. you have not purchased Remove Ads), the following ad formats
-          may appear:
-        </p>
-        <ul>
-          <li><strong>Rewarded ads</strong> &mdash; optional, offered after completing training rounds, granting a one-time in-app boost.</li>
-          <li><strong>Interstitial ads</strong> &mdash; shown when leaving a game back to the home screen.</li>
-          <li><strong>Banner ads</strong> &mdash; an adaptive banner on the Stats screen.</li>
-        </ul>
-        <p>
-          Google AdMob and its partners may use your mobile advertising identifier and
-          device data to serve interest-based ads. This processing is governed by
-          Google's advertising policies and their own privacy policy. You can reset or
-          limit ad personalisation through your device's advertising settings, and you
-          can remove advertising entirely by purchasing the Remove Ads upgrade.
-        </p>
-        <div class="note">
-          During development the App uses Google's public test ad units, which never
-          serve real advertising and never pay out. Production builds are switched to
-          the account ad units before release.
-        </div>
-      </article>
-    </section>
+        <!-- Local data -->
+        <section class="pane" id="p-local">
+          <div class="pane-title">Your data on device</div>
+          <p class="pane-sub">Everything here never leaves your phone — unless you personally choose to sign in (see <b>Sign-in &amp; sync</b>).</p>
+          <div class="card">
+            <div class="card-head"><h3>Stored locally, kept private</h3><p>These live in the app's own storage on your device:</p></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Training history</b><span>Your scores, streaks, accuracy, momentum and unlocks.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><circle cx="9" cy="10.5" r="1" fill="currentColor"/><circle cx="15" cy="10.5" r="1" fill="currentColor"/><path d="M9 15c1.8 1 4.2 1 6 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Preferences</b><span>Theme, sound, haptics, reminder time and settings.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 18V9h16v9a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zM8 9V6a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Remove Ads record</b><span>Just a flag: you bought it, so ads switch off.</span></div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>Your controls</h3></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v12H4zM8 4v6M12 4v6M16 4v6" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Export a copy</b><span>Stats screen → Export data (CSV). Your data, portable.</span></div><span class="chev">›</span></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v12m0 0l-3-3m3 3l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Delete it all</b><span>Clear the app's data or uninstall — done in seconds.</span></div><span class="chev">›</span></div>
+          </div>
+        </section>
 
-    <!-- ── 6 · Purchases ────────────────────────────────────────────── -->
-    <section id="purchases">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>6 · Purchases &amp; Subscriptions<small>GOOGLE PLAY BILLING</small></h2>
-        </div>
-        <p>
-          The Remove Ads upgrade is a one-time, non-consumable purchase processed through
-          <strong>Google Play Billing</strong>. We never see, store or process your card
-          or payment credentials &mdash; payment and receipt are handled entirely by
-          Google. We receive only the confirmation that the purchase was completed, which
-          we store locally and (if you are signed in) mirror to your sync data so your
-          entitlement follows you to other devices.
-        </p>
-      </article>
-    </section>
+        <!-- Ads -->
+        <section class="pane" id="p-ads">
+          <div class="pane-title">Advertising</div>
+          <p class="pane-sub">The free version is supported by <b>Google AdMob</b>. Buy Remove Ads and all of this switches off.</p>
+          <div class="row-menu">
+            <div class="card">
+              <div class="card-head"><h3>What Google may know when ads are on</h3></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Advertising ID</b><span>A random, resettable identifier used to pick relevant ads.</span></div></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="7" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M9 7V5a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Device info</b><span>Model, OS version, screen size, language.</span></div></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v9l6 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Usage data</b><span>App opens, ad impressions, crash diagnostics.</span></div></div>
+            </div>
+            <div class="card">
+              <div class="card-head"><h3>Formats in this app</h3></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Rewarded</b><span>Optional video, offers a small in-train boost. Never forced.</span></div><span class="badge b-on">OPT-IN</span></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="8" width="14" height="9" rx="1.5" stroke="currentColor" stroke-width="1.6"/><path d="M5 12h14" stroke="currentColor" stroke-width="1.2"/></svg></div><div class="row-txt"><b>Interstitial</b><span>Full screen ad on leaving a game, back to home.</span></div></div>
+              <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="5" rx="1" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Banner</b><span>A slim bar at the bottom of the Stats screen.</span></div></div>
+            </div>
+          </div>
+          <div class="card"><div class="card-head"><h3>Google's own policies</h3><p>Data shared with Google is handled under Google's rules.</p></div>
+            <div class="row" onclick="window.open('https://policies.google.com/privacy')"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8M8 15h5M12 7h.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Google Privacy Policy</b></div><span class="chev">›</span></div>
+            <div class="row" onclick="window.open('https://www.google.com/policies/privacy/partners/')"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M8 12h8M8 15h5M12 7h.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>How Google uses data from partners</b></div><span class="chev">›</span></div>
+          </div>
+        </section>
 
-    <!-- ── 7 · Firebase & Sync ──────────────────────────────────────── -->
-    <section id="firebase">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>7 · Firebase &amp; Cloud Sync<small>AUTHENTICATION · FIRESTORE · CRASHLYTICS · ANALYTICS</small></h2>
-        </div>
-        <p><strong>Optional sign-in.</strong> If you sign in with your Google account we
-          use <em>Firebase Authentication</em> for the sign-in and <em>Firestore</em> to
-          keep your scores, bests and purchase entitlement in sync across devices.</p>
-        <p><strong>Crash reports.</strong> When a build includes <em>Firebase Crashlytics</em>,
-          anonymised crash diagnostics (device model, OS and app versions, stack traces)
-          may be sent to Google to help us maintain stability.</p>
-        <p><strong>Analytics.</strong> When a build includes <em>Firebase Analytics</em>,
-          anonymised aggregate usage events may be collected to help improve features.</p>
-        <p><strong>Opt-out.</strong> Data is only transmitted under the Firestore/Crashlytics/
-          Analytics configuration of the specific build you installed. If you never sign in,
-          your Training Data never leaves your device, and you may uninstall at any time.</p>
-      </article>
-    </section>
+        <!-- Purchases -->
+        <section class="pane" id="p-purchase">
+          <div class="pane-title">Purchases</div>
+          <p class="pane-sub">There is one upgrade: <b>Remove Ads</b>. It's bought through Google, paid to Google, handled by Google.</p>
+          <div class="card">
+            <div class="card-head"><h3>Remove Ads</h3><p>One-time, non-consumable, yours forever.</p></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>We never see your card</b><span>Payments are 100% processed by Google Play.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>We only learn: purchased?</b><span>A single yes/no is stored so your ads turn off.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Stays yours</b><span>Record follows your account to other devices if you sync.</span></div></div>
+          </div>
+          <p class="foot">Tip: it's a one-time payment — not a subscription. No surprises, ever.</p>
+        </section>
 
-    <!-- ── 8 · Permissions ──────────────────────────────────────────── -->
-    <section id="permissions">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>8 · Permissions<small>WHAT THE APP CAN ACCESS AND WHY</small></h2>
-        </div>
-        <table class="tbl">
-          <thead><tr><th>Permission</th><th>Purpose</th><th>Required?</th></tr></thead>
-          <tbody>
-            <tr><td>Notifications (POST_NOTIFICATIONS)</td><td>Optional daily reminders you configure in the App</td><td>No &mdash; only after you enable it</td></tr>
-            <tr><td>Internet / Network state</td><td>Ads, cloud sync and in-app purchases when you use them</td><td>Yes &mdash; core connectivity</td></tr>
-          </tbody>
-        </table>
-        <p>
-          The App does not access contacts, location, camera, microphone, photos,
-          storage or SMS under any circumstances. Requested permissions are minimal
-          and transparent.
-        </p>
-      </article>
-    </section>
+        <!-- Sync -->
+        <section class="pane" id="p-sync">
+          <div class="pane-title">Sign-in &amp; cloud sync</div>
+          <p class="pane-sub">100% optional. Ignore it forever and nothing ever leaves your device.</p>
+          <div class="card">
+            <div class="card-head"><h3>Only if you say yes</h3></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" stroke="currentColor" stroke-width="1.6"/><path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/></svg></div><div class="row-txt"><b>Recognizes you</b><span>Google sign-in (Firebase Auth) — we don't invent accounts.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="M8 4v6M12 4v6M16 4v6" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Keeps scores in sync</b><span>Bests, history and Remove Ads across your devices.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 4v12m0 0l-3-3m3 3l3-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Sign out any time</b><span>One tap. Local data stays, sync just stops.</span></div><span class="badge b-on">OPTIONAL</span></div>
+          </div>
+          <div class="note"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><p>Synced data is stored by <b>Google Firebase</b>, under your own account. No sign-in = no transmission, plain and simple.</p></div>
+        </section>
 
-    <!-- ── 9 · Children ─────────────────────────────────────────────── -->
-    <section id="children">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>9 · Children's Privacy<small>COPPA COMPLIANCE</small></h2>
-        </div>
-        <p>
-          The App is not directed at children under 13 years of age, and we do not
-          knowingly collect personal information from children under 13. If you believe
-          a child has provided us personal information, please contact us (section 13) and
-          we will investigate and delete that information promptly. We also comply with
-          store-level requirements for child-directed data handling where applicable.
-        </p>
-      </article>
-    </section>
+        <!-- Choices -->
+        <section class="pane" id="p-choices">
+          <div class="pane-title">Your choices</div>
+          <p class="pane-sub">You stay in the driver's seat. Every switch is yours.</p>
+          <div class="card">
+            <div class="card-head"><h3>Quick toggles</h3><p>Illustrative — real controls live in the app's Stats screen.</p></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 10h16l-3-4H7l-3 4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Personalized ads (consent)</b><span>EEA/UK users are asked before ads show.</span></div><div class="toggle" onclick="this.classList.toggle('on')"></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="M8 4v6M12 4v6M16 4v6" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Cloud sync</b><span>Off = nothing leaves your device.</span></div><div class="toggle off"></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3v12M18 9v12M3 6h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Daily reminder</b><span>Notifications only if you switch them on.</span></div><div class="toggle on"></div></div>
+          </div>
+          <div class="card">
+            <div class="card-head"><h3>How to opt out of ad personalization</h3></div>
+            <div class="row" onclick="window.open('https://support.google.com/ads/answer/2662922')"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V4a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Android ads settings</b><span>Settings → Privacy → Ads → reset advertising ID.</span></div><span class="chev">›</span></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Remove Ads in-app</b><span>Buy once, and every ad format disappears.</span></div><span class="chev">›</span></div>
+          </div>
+        </section>
 
-    <!-- ── 10 · Retention ───────────────────────────────────────────── -->
-    <section id="retention">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>10 · Data Retention &amp; Deletion<small>HOW LONG WE KEEP EVERYTHING</small></h2>
-        </div>
-        <p>
-          <strong>On-device data</strong> is retained for as long as you keep the App
-          installed and is deleted when you clear the App's storage or uninstall it.
-        </p>
-        <p>
-          <strong>Synced data</strong> is retained in Firestore while your account remains
-          linked and is removed from our Firebase project when (a) you sign out and delete,
-          or (b) you close your Google account, whichever applies. You may request deletion
-          of synced data at any time via the contact details in section 13.
-        </p>
-        <div class="note">
-          Deleting the App from one device does not automatically remove data you earlier
-          chose to sync to your Google account. Manage synced data from the App's sync
-          settings or contact us and we will remove it.
-        </div>
-      </article>
-    </section>
+        <!-- Kids -->
+        <section class="pane" id="p-kids">
+          <div class="pane-title">Families &amp; kids</div>
+          <p class="pane-sub">MindHive is designed for 13 and up. We take children's privacy seriously.</p>
+          <div class="card">
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="7" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M5.5 21c.8-4 3-6 6.5-6s5.7 2 6.5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Not for under 13</b><span>We don't knowingly collect anything from kids under 13.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Kids see non-personalized ads only</b><span>No behavioral targeting toward children. Ever.</span></div><span class="badge b-on">COPPA</span></div>
+          </div>
+        </section>
 
-    <!-- ── 11 · Your rights ─────────────────────────────────────────── -->
-    <section id="rights">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>11 · Your Rights<small>GDPR &amp; CCPA / CPRA CONTROLS</small></h2>
-        </div>
-        <p>Depending on your region, you may have the right to:</p>
-        <ul>
-          <li><strong>Access</strong> &mdash; obtain a copy of the Training Data we process about you.</li>
-          <li><strong>Rectify</strong> &mdash; correct inaccurate or incomplete data.</li>
-          <li><strong>Erase</strong> &mdash; request deletion of your data where applicable.</li>
-          <li><strong>Portability</strong> &mdash; export your data in a machine-readable format. The App ships a built-in CSV export from the Stats screen.</li>
-          <li><strong>Object / restrict</strong> &mdash; limit processing, including disabling Cloud Sync, reminders and ad personalisation at any time.</li>
-          <li><strong>Do not sell / share</strong> &mdash; we do not sell your personal information; we do not share it except as described in this policy.</li>
-        </ul>
-        <p>
-          To exercise any right, use the in-app controls first (they cover the vast
-          majority of cases), then contact us via section 13. We respond to verified
-          requests within 30 days as required by applicable law.
-        </p>
-      </article>
-    </section>
+        <!-- Rights -->
+        <section class="pane" id="p-rights">
+          <div class="pane-title">Your rights</div>
+          <p class="pane-sub">Strong rights, simply applied — GDPR in Europe, CCPA in California.</p>
+          <div class="card">
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7h.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Access</b><span>Ask for a copy of what we process about you.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="currentColor" stroke-width="1.6"/><path d="M8 9h8M8 13h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Rectify &amp; erase</b><span>Fix or delete your data — clear the app or ask us.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16v12H4z" stroke="currentColor" stroke-width="1.6"/><path d="M8 4v6M12 4v6M16 4v6" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Portability</b><span>Export your training data as CSV, any time.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>We don't sell data</b><span>Full stop. Nothing to opt out of — there's no sale.</span></div><span class="badge b-on">CCPA OK</span></div>
+          </div>
+          <p class="foot">Most rights are exercised inside the app itself (export, sign-out, clear data) — no emails required.</p>
+        </section>
 
-    <!-- ── 12 · Security ────────────────────────────────────────────── -->
-    <section id="security">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>12 · Data Security<small>HOW WE PROTECT YOUR DATA</small></h2>
-        </div>
-        <p>
-          We apply the following safeguards:
-        </p>
-        <ul>
-          <li><strong>Local-first architecture</strong> &mdash; the default state keeps sensitive Training Data entirely on-device, minimising exposure by design.</li>
-          <li><strong>Encrypted transport</strong> &mdash; any transmission (sync, ads, purchases) uses TLS over HTTPS to Google's infrastructure.</li>
-          <li><strong>Least-privilege</strong> &mdash; permissions and data sharing are limited to what a feature genuinely requires.</li>
-          <li><strong>Vetted SDKs</strong> &mdash; we rely on Google's certified platform services (Play Billing, AdMob, Firebase), which maintain their own security and compliance programmes.</li>
-        </ul>
-        <p>
-          No method of transmission or storage is 100% secure. While we work to protect
-          your information, we cannot guarantee absolute security in the event of an
-          unauthorised breach of third-party infrastructure.
-        </p>
-      </article>
-    </section>
+        <!-- Security -->
+        <section class="pane" id="p-security">
+          <div class="pane-title">Security</div>
+          <p class="pane-sub">No central data, no central attack. That's the point.</p>
+          <div class="card">
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Local by design</b><span>Nothing to hack on our side — it's on your phone.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 8l7-4 7 4v8l-7 4-7-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M12 12l.01 0" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Encrypted in transit</b><span>Any sync or ad traffic travels over HTTPS/TLS.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 9l1.8-4h10.4L19 9M5 9h14v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 9V6a3 3 0 0 1 6 0v3" stroke="currentColor" stroke-width="1.6"/></svg></div><div class="row-txt"><b>Least-privilege</b><span>We only ask for what a feature truly needs.</span></div></div>
+          </div>
+        </section>
 
-    <!-- ── 13 · Changes ─────────────────────────────────────────────── -->
-    <section id="changes">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>13 · Changes to This Policy<small>NOTIFICATION PROCESS</small></h2>
-        </div>
-        <p>
-          We may update this Privacy Policy from time to time as features, law and
-          platform requirements evolve. Material changes will be reflected by a new
-          revision date at the top of this page (and, where required, an in-app notice
-          on first launch after the change). Continued use of the App after a revision
-          constitutes acceptance of the updated policy.
-        </p>
-      </article>
-    </section>
+        <!-- Updates -->
+        <section class="pane" id="p-updates">
+          <div class="pane-title">Policy updates</div>
+          <p class="pane-sub">If things change, you'll know — no buried fine print.</p>
+          <div class="card">
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Revision date always visible</b><span>"Last updated" refreshes at the top of this page.</span></div><span class="badge b-on">v10.1.1</span></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v18M3 12h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Material changes announced</b><span>In-app notice or store update on big changes.</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12l5 5L19 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Continued use = acceptance</b><span>Like any good tool, ongoing use means you agree.</span></div></div>
+          </div>
+        </section>
 
-    <!-- ── 14 · Contact ─────────────────────────────────────────────── -->
-    <section id="contact">
-      <article class="card">
-        <div class="sec-head"><span class="dot"></span>
-          <h2>14 · Contact &amp; Questions<small>HOW TO REACH US</small></h2>
-        </div>
-        <p>
-          Questions, concerns or data requests regarding this policy or your information:
-        </p>
-        <p>
-          <strong>Reference page:</strong> mindhive.app/privacy<br>
-          <strong>Contact:</strong> via the contact details published on mindhive.app
-        </p>
-        <p>
-          We will acknowledge requests within 48 hours and respond in full within 30 days.
-        </p>
-      </article>
-    </section>
+        <!-- Contact -->
+        <section class="pane" id="p-contact">
+          <div class="pane-title">Contact</div>
+          <p class="pane-sub">Questions, concerns, data requests — we reply in days, not weeks.</p>
+          <div class="card">
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M5 7l7 6 7-6" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div><div class="row-txt"><b>Email</b><span>qurangen.us@gmail.com</span></div><span class="chev">›</span></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Developer</b><span>QuranGen Labs</span></div></div>
+            <div class="row"><div class="row-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18z" stroke="currentColor" stroke-width="1.6"/><path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><div class="row-txt"><b>Response times</b><span>Acknowledgement in 48h, full answer within 30 days.</span></div></div>
+          </div>
+          <div class="note"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><p>Before emailing, most things are one tap in the app: <b>Export data</b>, <b>Sign out</b>, or <b>Clear app data</b> handle 90% of requests instantly.</p></div>
+        </section>
 
-    <footer>
-      <p>
-        MindHive Privacy Policy &mdash; revision dated 1 January 2026, effective upon
-        publication. This document is provided for general information and applies to
-        the App across all platforms. In the event of any conflict between this page and
-        store-listed policies, the most recent effective revision governs.
-      </p>
-      <p>© MindHive. All rights reserved. Built on AndroidX, Jetpack Compose and Firebase open-source libraries.</p>
-    </footer>
-
+      </main>
+    </div>
   </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="toastTxt">Done</span></div>
+
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <button class="tb-btn tb-start" onclick="toast('Hello from MindHive')" title="Start">
+      <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="21" fill="url(#tbg)"/><path d="M24 12c-6 0-11 4-11 11 0 5 3.4 9.4 8.5 10.7V28a2 2 0 0 1 2-2h1v-2.5a2 2 0 0 1 4 0V26h1a2 2 0 0 1 2 2v5.7c5.1-1.3 8.5-5.7 8.5-10.7 0-7-5-11-11-11Zm-4 12.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm8 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z" fill="#0B0712"/><defs><linearGradient id="tbg" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#FF7AD1"/><stop offset="1" stop-color="#A78BFA"/></linearGradient></defs></svg>
+    </button>
+    <div class="tb-group tb-center" style="margin-left:8px">
+      <button class="tb-btn tb-search" onclick="toast('Search your privacy topics…')" title="Search">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M15.5 15.5L20 20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="stxt" style="margin-left:8px">Search topics</span>
+      </button>
+      <button class="tb-btn mh" onclick="openApp()" title="MindHive — Privacy Policy">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="19" fill="url(#mh2)"/><path d="M24 15c-4.8 0-8.8 3.2-8.8 8.8 0 4 2.7 7.5 6.8 8.6v-4.5a1.6 1.6 0 0 1 1.6-1.6h.8v-2a1.6 1.6 0 0 1 3.2 0v2h.8a1.6 1.6 0 0 1 1.6 1.6v4.5c4.1-1.1 6.8-4.6 6.8-8.6C32.8 18.2 28.8 15 24 15Zm-3.2 10a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Zm6.4 0a1.2 1.2 0 1 1 0-2.4 1.2 1.2 0 0 1 0 2.4Z" fill="#0B0712"/><defs><linearGradient id="mh2" x1="0" y1="0" x2="48" y2="48"><stop stop-color="#FF7AD1"/><stop offset="1" stop-color="#A78BFA"/></linearGradient></defs></svg>
+      </button>
+    </div>
+    <div class="tb-spacer"></div>
+    <div class="tb-tray">
+      <div class="tb-btn" onclick="toast('Wi-Fi · You are in control of your data')" title="Network"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10a14 14 0 0 1 18 0M5.5 13.5a9 9 0 0 1 13 0M8.5 16.5a4.5 4.5 0 0 1 7 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="19.5" r="1" fill="currentColor"/></svg></div>
+      <div class="tb-btn" onclick="toast('Battery · Healthy')" title="Battery"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="8" width="16" height="8" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M21 10.5v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="5" y="10" width="8" height="4" rx=".8" fill="currentColor"/></svg></div>
+      <div class="tb-clock"><b id="clkTime">--:--</b><small id="clkDate">----</small></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast2"></div>
+</div>
+
+<script>
+  const crumb = document.getElementById('crumb');
+  const panes = document.querySelectorAll('.pane');
+  const items = document.querySelectorAll('.nav-item');
+  const win = document.getElementById('win');
+  const titles = { p-home:'Home', p-overview:'At a glance', p-local:'Your data on device', p-ads:'Advertising', p-purchase:'Purchases', p-sync:'Sign-in & sync', p-choices:'Your choices', p-kids:'Families & kids', p-rights:'Your rights', p-security:'Security', p-updates:'Policy updates', p-contact:'Contact' };
+
+  function go(id) {
+    panes.forEach(p => p.classList.remove('show'));
+    items.forEach(i => i.classList.toggle('active', i.dataset.pane === id));
+    const el = document.getElementById(id);
+    el.classList.add('show');
+    document.getElementById('content').scrollTop = 0;
+    crumb.textContent = titles[id] || 'Overview';
+    if (id === 'p-home') crumb.textContent = 'Settings';
+  }
+
+  let toastTimer;
+  function toast(msg) {
+    const t = document.getElementById('toast');
+    document.getElementById('toastTxt').textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+  }
+
+  function openApp() {
+    win.classList.remove('closed');
+    win.style.zIndex = 30;
+    document.querySelectorAll('.dicon').forEach(d => d.classList.remove('selected'));
+  }
+  function minWin() { win.classList.add('closed'); win.style.zIndex = 10; }
+  function closeWin() { win.classList.add('closed'); win.style.zIndex = 10; }
+  function maxWin() {
+    win.classList.toggle('max');
+    document.getElementById('btnMax').title = win.classList.contains('max') ? 'Restore down' : 'Maximize';
+  }
+  function selectIcon(el) { document.querySelectorAll('.dicon').forEach(d => d.classList.remove('selected')); el.classList.add('selected'); }
+
+  // Clock
+  const fmt = n => String(n).padStart(2, '0');
+  function tick() {
+    const d = new Date();
+    let h = d.getHours(); const m = fmt(d.getMinutes());
+    const ap = h >= 12 ? 'PM' : 'AM'; h = h % 12 || 12;
+    document.getElementById('clkTime').textContent = h + ':' + m + ' ' + ap;
+    document.getElementById('clkDate').textContent = (d.getMonth()+1) + '/' + d.getDate() + '/' + d.getFullYear();
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Boot: keep first pane memory
+  go(new URLSearchParams(location.search).get('p') || 'p-home');
+</script>
 </body>
 </html>
