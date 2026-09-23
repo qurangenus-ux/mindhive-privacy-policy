@@ -315,7 +315,7 @@
       <main class="content" id="content">
 
         <!-- Home -->
-        <section class="pane" id="p-home">
+        <section class="pane show" id="p-home">
           <div class="hero">
             <div class="tag">WINDOWS · PREMIUM DARK</div>
             <h2>Privacy Policy <em>·</em> MindHive</h2>
@@ -533,19 +533,24 @@
   const titles = { p-home:'Home', p-overview:'At a glance', p-local:'Your data on device', p-ads:'Advertising', p-purchase:'Purchases', p-sync:'Sign-in & sync', p-choices:'Your choices', p-kids:'Families & kids', p-rights:'Your rights', p-security:'Security', p-updates:'Policy updates', p-contact:'Contact' };
 
   function go(id) {
+    const nextId = document.getElementById(id) ? id : 'p-home';
     panes.forEach(p => p.classList.remove('show'));
-    items.forEach(i => i.classList.toggle('active', i.dataset.pane === id));
-    const el = document.getElementById(id);
+    items.forEach(i => i.classList.toggle('active', i.dataset.pane === nextId));
+    const el = document.getElementById(nextId);
+    if (!el) return;
     el.classList.add('show');
-    document.getElementById('content').scrollTop = 0;
-    crumb.textContent = titles[id] || 'Overview';
-    if (id === 'p-home') crumb.textContent = 'Settings';
+    const content = document.getElementById('content');
+    if (content) content.scrollTop = 0;
+    crumb.textContent = titles[nextId] || 'Overview';
+    if (nextId === 'p-home') crumb.textContent = 'Settings';
   }
 
   let toastTimer;
   function toast(msg) {
     const t = document.getElementById('toast');
-    document.getElementById('toastTxt').textContent = msg;
+    const txt = document.getElementById('toastTxt');
+    if (!t || !txt) return;
+    txt.textContent = msg;
     t.classList.add('show');
     clearTimeout(toastTimer);
     toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
