@@ -1,136 +1,481 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privacy Policy — MindHive</title>
-<style>
-  :root{
-    --bg:#0c0e12; --panel:#14171d; --text:#e8ecf2; --dim:#9aa3b2;
-    --accent:#00d9ff; --line:#232833;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html,body{background:var(--bg); color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    line-height:1.7; -webkit-font-smoothing:antialiased;}
-  .wrap{max-width:820px; margin:0 auto; padding:56px 24px 96px;}
-  header{margin-bottom:44px; border-bottom:1px solid var(--line); padding-bottom:28px;}
-  .brand{font-size:15px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); font-weight:600;}
-  h1{font-size:34px; font-weight:700; margin-top:12px; letter-spacing:-0.5px;}
-  .updated{margin-top:10px; color:var(--dim); font-size:14px;}
-  h2{font-size:20px; font-weight:600; margin:36px 0 12px; padding-bottom:8px;
-    border-bottom:1px solid var(--line);}
-  p,li{color:var(--text); font-size:15.5px;}
-  p{color:#dfe5ee;}
-  .card{background:var(--panel); border:1px solid var(--line); border-radius:14px;
-    padding:22px 24px; margin:18px 0;}
-  .card h3{font-size:16px; font-weight:600; margin-bottom:8px; color:var(--accent);}
-  ul{padding-left:22px;}
-  li{margin:8px 0;}
-  strong{color:#fff;}
-  .muted{color:var(--dim);}
-  a{color:var(--accent); text-decoration:none;}
-  a:hover{text-decoration:underline;}
-  footer{margin-top:56px; padding-top:20px; border-top:1px solid var(--line);
-    color:var(--dim); font-size:13.5px;}
-  @media(max-width:520px){ h1{font-size:27px;} .wrap{padding:40px 18px 72px;} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MindHive Privacy Policy - how the brain-training app collects, uses, stores and protects your data.">
+  <title>MindHive · Privacy Policy</title>
+  <style>
+    :root {
+      --bg-deep: #07040D;
+      --bg: #0B0712;
+      --surface: #150D22;
+      --surface-hi: #1F1533;
+      --line: #2C2144;
+      --accent: #FF7AD1;
+      --ink: #F4F4F1;
+      --prose: #CFC3E3;
+      --dim: #A795C4;
+      --mist: #7A6A99;
+      --soft: #2E2350;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg-deep);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.7;
+    }
+    .bg {
+      position: fixed; inset: 0; z-index: -1;
+      background:
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(255,122,209,0.16), transparent),
+        radial-gradient(ellipse 60% 40% at 90% 110%, rgba(167,139,250,0.10), transparent),
+        linear-gradient(180deg, var(--bg-deep) 0%, var(--bg) 55%, var(--bg-deep) 100%);
+    }
+    .wrap { max-width: 780px; margin: 0 auto; padding: 40px 22px 80px; }
+
+    /* ── Top nav ─────────────────────────────────────────────────── */
+    header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .brand { font-size: 24px; font-weight: 700; letter-spacing: -0.5px; }
+    .brand em { font-style: normal; color: var(--accent); }
+    .ver { margin-left: auto; font-size: 11px; letter-spacing: 1px; color: var(--dim); background: var(--surface); border: 1px solid var(--line); padding: 7px 14px; border-radius: 999px; font-weight: 600; }
+
+    nav.toc {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin: 28px 0 40px;
+    }
+    nav.toc a {
+      font-size: 12px; text-decoration: none; color: var(--prose);
+      background: var(--surface); border: 1px solid var(--line);
+      padding: 7px 13px; border-radius: 999px; transition: all .18s;
+    }
+    nav.toc a:hover { color: var(--ink); border-color: var(--accent); background: var(--surface-hi); }
+
+    /* ── Hero ────────────────────────────────────────────────────── */
+    .hero { margin-bottom: 44px; }
+    .kicker { font-size: 11px; letter-spacing: 2.2px; color: var(--accent); font-weight: 700; text-transform: uppercase; margin-bottom: 14px; }
+    h1 { font-size: clamp(28px, 5vw, 40px); font-weight: 700; letter-spacing: -1px; line-height: 1.12; margin-bottom: 16px; }
+    h1 span { color: var(--accent); }
+    .lead { font-size: 16px; color: var(--prose); }
+    .meta {
+      margin-top: 22px; padding: 14px 18px; display: flex; flex-wrap: wrap; gap: 8px 24px;
+      background: var(--surface); border: 1px solid var(--line); border-radius: 14px; font-size: 12.5px; color: var(--dim);
+    }
+    .meta b { color: var(--ink); font-weight: 600; }
+
+    /* ── Sections ────────────────────────────────────────────────── */
+    section { margin-bottom: 26px; }
+    article.card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: 20px;
+      padding: 26px; margin-bottom: 16px;
+    }
+    article.card .sec-head { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); margin-top: 7px; flex: none; box-shadow: 0 0 12px rgba(255,122,209,0.6); }
+    h2 { font-size: 15px; font-weight: 700; letter-spacing: 0.4px; color: var(--accent); }
+    h2 small { display: block; font-size: 11px; letter-spacing: 1.2px; color: var(--mist); margin-top: 3px; font-weight: 600; }
+    article.card p, article.card li { font-size: 14.5px; color: var(--prose); }
+    article.card p { margin-bottom: 10px; }
+    article.card p:last-child { margin-bottom: 0; }
+    article.card ul { padding-left: 18px; }
+    article.card li { margin-bottom: 6px; }
+    .note {
+      border-left: 3px solid var(--accent); background: rgba(255,122,209,0.06);
+      border-radius: 0 12px 12px 0; padding: 14px 16px; margin-top: 12px; font-size: 13px; color: var(--dim);
+    }
+    .tbl { width: 100%; border-collapse: collapse; margin: 8px 0 4px; font-size: 13.5px; }
+    .tbl th, .tbl td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--prose); vertical-align: top; }
+    .tbl th { color: var(--accent); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+
+    /* ── Footer ──────────────────────────────────────────────────── */
+    footer { margin-top: 44px; padding-top: 24px; border-top: 1px solid var(--line); }
+    footer p { font-size: 12.5px; color: var(--mist); margin-bottom: 8px; }
+    footer .status { display: inline-block; font-size: 11px; color: var(--accinent, var(--accent)); letter-spacing: 1px; }
+
+    @media (max-width: 480px) {
+      .wrap { padding-top: 24px; }
+      article.card { padding: 20px; }
+    }
+  </style>
 </head>
 <body>
-<div class="wrap">
+  <div class="bg"></div>
+  <div class="wrap">
 
-  <header>
-    <div class="brand">MindHive</div>
-    <h1>Privacy Policy</h1>
-    <div class="updated">Effective date: August 30, 2026</div>
-  </header>
+    <header>
+      <div class="brand">MindHive<em>.</em></div>
+      <div class="ver">LAST REVISED · 2026</div>
+    </header>
 
-  <section>
-    <h2>Overview</h2>
-    <p>MindHive (&ldquo;the App&rdquo;) is an offline brain-training game for Android. We
-    built it with privacy as a core principle: <p><strong>The App does not collect,
-    store, transmit, or share any personal data.</strong></p>
-    <div class="card">
-      <h3>At a glance</h3>
-      <ul>
-        <li>Fully offline — no internet connection required to play.</li>
-        <li><strong>No ads.</strong></li>
-        <li><strong>No analytics, no tracking, no telemetry.</strong></li>
-        <li>No account, no login, no registration.</li>
-        <li>No third-party SDKs that read your data.</li>
-      </ul>
+    <nav class="toc">
+      <a href="#overview">Overview</a>
+      <a href="#definitions">Definitions</a>
+      <a href="#data-collected">Data Collected</a>
+      <a href="#purposes">How We Use Data</a>
+      <a href="#ads">Advertising</a>
+      <a href="#purchases">Purchases</a>
+      <a href="#firebase">Firebase &amp; Sync</a>
+      <a href="#permissions">Permissions</a>
+      <a href="#children">Children</a>
+      <a href="#retention">Retention</a>
+      <a href="#rights">Your Rights</a>
+      <a href="#security">Security</a>
+      <a href="#changes">Changes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="hero">
+      <div class="kicker">MindHive Privacy Policy</div>
+      <h1>Your mind stays <span>yours.</span></h1>
+      <p class="lead">
+        MindHive is local-first. Your scores, streaks and training history live on your
+        device, not in a cloud you never asked for. This policy explains, in plain
+        language and full legal detail, what the app processes, why, and the controls
+        you hold over it.
+      </p>
+      <div class="meta">
+        <span><b>Effective date:</b> 1 January 2026</span>
+        <span><b>Jurisdiction:</b> Worldwide</span>
+        <span><b>Governing laws:</b> GDPR · CCPA · COPPA · COPPA-adjacent stores</span>
+        <span><b>Applies to:</b> com.mindhive.app (all platforms)</span>
+      </div>
     </div>
-  </section>
 
-  <section>
-    <h2>Information We Collect</h2>
-    <p>We do not collect any personal information. The App does not ask for your name,
-    email address, or any identifier, and it does not access your contacts, location,
-    camera, microphone, or files.</p>
-    <p>Your game progress — scores, reaction times, streaks, and settings — is stored
-    <strong>only on your device</strong> and never leaves it.</p>
-  </section>
+    <!-- ── 1 · Overview ─────────────────────────────────────────────── -->
+    <section id="overview">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>1 · Overview<small>WHAT THIS POLICY COVERS</small></h2>
+        </div>
+        <p>
+          MindHive (&ldquo;the App&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;) is a
+          cognitive-training application. This Privacy Policy describes how the App
+          collects, uses, stores, shares and protects information when you download,
+          install and use it. It applies to all features of the App across every
+          supported device, including free gameplay, optional cloud sync and any
+          in-app purchases.
+        </p>
+        <p>
+          The App is designed around a <strong>local-first</strong> principle: core
+          training data is stored on your device and is never required to be shared
+          with us. You are never required to create an account, and no feature of the
+          training experience depends on providing personal information.
+        </p>
+        <div class="note">
+          By installing or using the App you agree to the practices described here.
+          If you do not agree, do not install or use the App, or uninstall it at any time.
+        </div>
+      </article>
+    </section>
 
-  <section>
-    <h2>Permissions</h2>
-    <p>The App requests a single permission:</p>
-    <ul>
-      <li><strong>Vibrate</strong> — used to provide haptic (touch) feedback when you tap
-      during gameplay. No data is read from this; it only produces a vibration on your device.</li>
-    </ul>
-    <p>The App does not request network, storage, or contact permissions.</p>
-  </section>
+    <!-- ── 2 · Definitions ──────────────────────────────────────────── -->
+    <section id="definitions">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>2 · Definitions<small>TERMS USED IN THIS POLICY</small></h2>
+        </div>
+        <ul>
+          <li><strong>Personal Data</strong> &mdash; information relating to an identified or identifiable natural person (e.g. a signed-in name or email address).</li>
+          <li><strong>Training Data</strong> &mdash; your in-app performance records: scores, accuracy, reaction times, session durations, streaks, unlocks and preferences.</li>
+          <li><strong>Device Data</strong> &mdash; technical information about the device such as OS version, model and app version, used for crash and analytics reporting.</li>
+          <li><strong>Local Storage</strong> &mdash; on-device storage (a Room/SQLite database and application preferences) that is not transmitted by default.</li>
+          <li><strong>Cloud Sync</strong> &mdash; the fully optional feature that mirrors Training Data to Firebase Firestore when you sign in with Google.</li>
+        </ul>
+      </article>
+    </section>
 
-  <section>
-    <h2>Optional In-App Purchase (Premium)</h2>
-    <p>MindHive offers a one-time in-app purchase to remove the watermark and unlock
-    extra themes. This purchase is processed entirely by
-    <strong>Google Play Billing</strong>. We never see or store your payment card
-    number, billing address, or other payment details.</p>
-    <p>Any payment-related information is handled by Google and is subject to
-    <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google&rsquo;s
-    Privacy Policy</a>.</p>
-  </section>
+    <!-- ── 3 · Data Collected ───────────────────────────────────────── -->
+    <section id="data-collected">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>3 · Data We Process<small>WHAT IS COLLECTED AND WHERE IT LIVES</small></h2>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Category</th><th>Specific data</th><th>Storage</th><th>Sharing</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><strong>Training Data</strong></td>
+              <td>Scores, accuracy, reaction times, momentum records, durations, streaks, unlocks, settings, reminders</td>
+              <td>On-device</td>
+              <td>Never, unless you opt in to Cloud Sync</td>
+            </tr>
+            <tr>
+              <td><strong>Purchase Confirmation</strong></td>
+              <td>Whether the &ldquo;Remove Ads&rdquo; non-consumable was purchased</td>
+              <td>On-device + Google (if synced)</td>
+              <td>Apple/Google Play &amp; Google billing servers</td>
+            </tr>
+            <tr>
+              <td><strong>Crash &amp; Analytics Data</strong></td>
+              <td>Device model, OS version, app version, anonymised crash traces, anonymised usage events</td>
+              <td>Firebase (when enabled in the build)</td>
+              <td>Google (Firebase Crashlytics/Analytics)</td>
+            </tr>
+            <tr>
+              <td><strong>Advertising Identifiers</strong></td>
+              <td>Mobile advertising identifiers, when ads are shown and you have not purchased Remove Ads</td>
+              <td>Ad networks</td>
+              <td>Google AdMob &amp; partners</td>
+            </tr>
+            <tr>
+              <td><strong>Contact / Identifying</strong></td>
+              <td>Google account name and email (only if you sign in)</td>
+              <td>Firebase Authentication / Firestore</td>
+              <td>Google</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          We do <strong>not</strong> process your contacts, location, photos, microphone,
+          biometrics or any sensitive special-category data. The App does not contain
+          simulated data &mdash; every number is measured from your own rounds.
+        </p>
+      </article>
+    </section>
 
-  <section>
-    <h2>No Third-Party Data Sharing</h2>
-    <p>Because we collect no data, we have nothing to share. The App contains
-    <strong>no advertising SDKs, no analytics SDKs, and no social media login
-    integrations</strong>.</p>
-  </section>
+    <!-- ── 4 · Purposes (legal bases) ───────────────────────────────── -->
+    <section id="purposes">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>4 · How We Use Your Data<small>PURPOSES AND LAWFUL BASIS</small></h2>
+        </div>
+        <p>We use the data described above for the following purposes:</p>
+        <ul>
+          <li><strong>Providing the service</strong> &mdash; to deliver, operate and personalise your training experience (contractual necessity).</li>
+          <li><strong>Syncing across devices</strong> &mdash; to mirror your Training Data and purchase entitlement when you voluntarily sign in (performance of the service you requested).</li>
+          <li><strong>Improving the product</strong> &mdash; to analyse anonymised crash and usage data, maintaining stability and performance (legitimate interest).</li>
+          <li><strong>Supporting the free app</strong> &mdash; to serve advertising and to process your optional Remove Ads purchase (legitimate interest / contract).</li>
+        </ul>
+        <p>
+          Where we rely on legitimate interest you may object at any time by disabling
+          the relevant feature (for example, not enabling Cloud Sync) or by uninstalling
+          the App.
+        </p>
+      </article>
+    </section>
 
-  <section>
-    <h2>Children&rsquo;s Privacy</h2>
-    <p>The App does not collect any personal information from anyone, including children
-    under the age of 13. Consistent with the Children&rsquo;s Online Privacy Protection Act
-    (COPPA) and the EU General Data Protection Regulation (GDPR), since no data is
-    collected, no parental consent is required to use the App.</p>
-  </section>
+    <!-- ── 5 · Advertising ──────────────────────────────────────────── -->
+    <section id="ads">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>5 · Advertising<small>ADMOB · REWARDED · INTERSTITIAL · BANNER</small></h2>
+        </div>
+        <p>
+          The App is demonetised through <strong>Google AdMob</strong>. When advertising
+          is enabled (i.e. you have not purchased Remove Ads), the following ad formats
+          may appear:
+        </p>
+        <ul>
+          <li><strong>Rewarded ads</strong> &mdash; optional, offered after completing training rounds, granting a one-time in-app boost.</li>
+          <li><strong>Interstitial ads</strong> &mdash; shown when leaving a game back to the home screen.</li>
+          <li><strong>Banner ads</strong> &mdash; an adaptive banner on the Stats screen.</li>
+        </ul>
+        <p>
+          Google AdMob and its partners may use your mobile advertising identifier and
+          device data to serve interest-based ads. This processing is governed by
+          Google's advertising policies and their own privacy policy. You can reset or
+          limit ad personalisation through your device's advertising settings, and you
+          can remove advertising entirely by purchasing the Remove Ads upgrade.
+        </p>
+        <div class="note">
+          During development the App uses Google's public test ad units, which never
+          serve real advertising and never pay out. Production builds are switched to
+          the account ad units before release.
+        </div>
+      </article>
+    </section>
 
-  <section>
-    <h2>Data Security</h2>
-    <p>Since all data resides locally on your own device, no data is transmitted over the
-    internet. Your progress remains under your control. If you uninstall the App, any
-    locally stored progress is removed along with it.</p>
-  </section>
+    <!-- ── 6 · Purchases ────────────────────────────────────────────── -->
+    <section id="purchases">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>6 · Purchases &amp; Subscriptions<small>GOOGLE PLAY BILLING</small></h2>
+        </div>
+        <p>
+          The Remove Ads upgrade is a one-time, non-consumable purchase processed through
+          <strong>Google Play Billing</strong>. We never see, store or process your card
+          or payment credentials &mdash; payment and receipt are handled entirely by
+          Google. We receive only the confirmation that the purchase was completed, which
+          we store locally and (if you are signed in) mirror to your sync data so your
+          entitlement follows you to other devices.
+        </p>
+      </article>
+    </section>
 
-  <section>
-    <h2>Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected
-    on this page, and the &ldquo;Effective date&rdquo; above will be revised accordingly.</p>
-  </section>
+    <!-- ── 7 · Firebase & Sync ──────────────────────────────────────── -->
+    <section id="firebase">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>7 · Firebase &amp; Cloud Sync<small>AUTHENTICATION · FIRESTORE · CRASHLYTICS · ANALYTICS</small></h2>
+        </div>
+        <p><strong>Optional sign-in.</strong> If you sign in with your Google account we
+          use <em>Firebase Authentication</em> for the sign-in and <em>Firestore</em> to
+          keep your scores, bests and purchase entitlement in sync across devices.</p>
+        <p><strong>Crash reports.</strong> When a build includes <em>Firebase Crashlytics</em>,
+          anonymised crash diagnostics (device model, OS and app versions, stack traces)
+          may be sent to Google to help us maintain stability.</p>
+        <p><strong>Analytics.</strong> When a build includes <em>Firebase Analytics</em>,
+          anonymised aggregate usage events may be collected to help improve features.</p>
+        <p><strong>Opt-out.</strong> Data is only transmitted under the Firestore/Crashlytics/
+          Analytics configuration of the specific build you installed. If you never sign in,
+          your Training Data never leaves your device, and you may uninstall at any time.</p>
+      </article>
+    </section>
 
-  <section>
-    <h2>Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or about how MindHive handles
-    your data, please contact us at:</p>
-    <p class="muted" style="margin-top:8px;"><a href="mailto:doctsaim@gmail.com">doctsaim@gmail.com</a></p>
-  </section>
+    <!-- ── 8 · Permissions ──────────────────────────────────────────── -->
+    <section id="permissions">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>8 · Permissions<small>WHAT THE APP CAN ACCESS AND WHY</small></h2>
+        </div>
+        <table class="tbl">
+          <thead><tr><th>Permission</th><th>Purpose</th><th>Required?</th></tr></thead>
+          <tbody>
+            <tr><td>Notifications (POST_NOTIFICATIONS)</td><td>Optional daily reminders you configure in the App</td><td>No &mdash; only after you enable it</td></tr>
+            <tr><td>Internet / Network state</td><td>Ads, cloud sync and in-app purchases when you use them</td><td>Yes &mdash; core connectivity</td></tr>
+          </tbody>
+        </table>
+        <p>
+          The App does not access contacts, location, camera, microphone, photos,
+          storage or SMS under any circumstances. Requested permissions are minimal
+          and transparent.
+        </p>
+      </article>
+    </section>
 
-  <footer>
-    &copy; 2026 QuranGen Labs. All rights reserved. MindHive is developed and published by QuranGen Labs. This privacy policy applies to the MindHive Android application.
-  </footer>
+    <!-- ── 9 · Children ─────────────────────────────────────────────── -->
+    <section id="children">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>9 · Children's Privacy<small>COPPA COMPLIANCE</small></h2>
+        </div>
+        <p>
+          The App is not directed at children under 13 years of age, and we do not
+          knowingly collect personal information from children under 13. If you believe
+          a child has provided us personal information, please contact us (section 13) and
+          we will investigate and delete that information promptly. We also comply with
+          store-level requirements for child-directed data handling where applicable.
+        </p>
+      </article>
+    </section>
 
-</div>
+    <!-- ── 10 · Retention ───────────────────────────────────────────── -->
+    <section id="retention">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>10 · Data Retention &amp; Deletion<small>HOW LONG WE KEEP EVERYTHING</small></h2>
+        </div>
+        <p>
+          <strong>On-device data</strong> is retained for as long as you keep the App
+          installed and is deleted when you clear the App's storage or uninstall it.
+        </p>
+        <p>
+          <strong>Synced data</strong> is retained in Firestore while your account remains
+          linked and is removed from our Firebase project when (a) you sign out and delete,
+          or (b) you close your Google account, whichever applies. You may request deletion
+          of synced data at any time via the contact details in section 13.
+        </p>
+        <div class="note">
+          Deleting the App from one device does not automatically remove data you earlier
+          chose to sync to your Google account. Manage synced data from the App's sync
+          settings or contact us and we will remove it.
+        </div>
+      </article>
+    </section>
+
+    <!-- ── 11 · Your rights ─────────────────────────────────────────── -->
+    <section id="rights">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>11 · Your Rights<small>GDPR &amp; CCPA / CPRA CONTROLS</small></h2>
+        </div>
+        <p>Depending on your region, you may have the right to:</p>
+        <ul>
+          <li><strong>Access</strong> &mdash; obtain a copy of the Training Data we process about you.</li>
+          <li><strong>Rectify</strong> &mdash; correct inaccurate or incomplete data.</li>
+          <li><strong>Erase</strong> &mdash; request deletion of your data where applicable.</li>
+          <li><strong>Portability</strong> &mdash; export your data in a machine-readable format. The App ships a built-in CSV export from the Stats screen.</li>
+          <li><strong>Object / restrict</strong> &mdash; limit processing, including disabling Cloud Sync, reminders and ad personalisation at any time.</li>
+          <li><strong>Do not sell / share</strong> &mdash; we do not sell your personal information; we do not share it except as described in this policy.</li>
+        </ul>
+        <p>
+          To exercise any right, use the in-app controls first (they cover the vast
+          majority of cases), then contact us via section 13. We respond to verified
+          requests within 30 days as required by applicable law.
+        </p>
+      </article>
+    </section>
+
+    <!-- ── 12 · Security ────────────────────────────────────────────── -->
+    <section id="security">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>12 · Data Security<small>HOW WE PROTECT YOUR DATA</small></h2>
+        </div>
+        <p>
+          We apply the following safeguards:
+        </p>
+        <ul>
+          <li><strong>Local-first architecture</strong> &mdash; the default state keeps sensitive Training Data entirely on-device, minimising exposure by design.</li>
+          <li><strong>Encrypted transport</strong> &mdash; any transmission (sync, ads, purchases) uses TLS over HTTPS to Google's infrastructure.</li>
+          <li><strong>Least-privilege</strong> &mdash; permissions and data sharing are limited to what a feature genuinely requires.</li>
+          <li><strong>Vetted SDKs</strong> &mdash; we rely on Google's certified platform services (Play Billing, AdMob, Firebase), which maintain their own security and compliance programmes.</li>
+        </ul>
+        <p>
+          No method of transmission or storage is 100% secure. While we work to protect
+          your information, we cannot guarantee absolute security in the event of an
+          unauthorised breach of third-party infrastructure.
+        </p>
+      </article>
+    </section>
+
+    <!-- ── 13 · Changes ─────────────────────────────────────────────── -->
+    <section id="changes">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>13 · Changes to This Policy<small>NOTIFICATION PROCESS</small></h2>
+        </div>
+        <p>
+          We may update this Privacy Policy from time to time as features, law and
+          platform requirements evolve. Material changes will be reflected by a new
+          revision date at the top of this page (and, where required, an in-app notice
+          on first launch after the change). Continued use of the App after a revision
+          constitutes acceptance of the updated policy.
+        </p>
+      </article>
+    </section>
+
+    <!-- ── 14 · Contact ─────────────────────────────────────────────── -->
+    <section id="contact">
+      <article class="card">
+        <div class="sec-head"><span class="dot"></span>
+          <h2>14 · Contact &amp; Questions<small>HOW TO REACH US</small></h2>
+        </div>
+        <p>
+          Questions, concerns or data requests regarding this policy or your information:
+        </p>
+        <p>
+          <strong>Reference page:</strong> mindhive.app/privacy<br>
+          <strong>Contact:</strong> via the contact details published on mindhive.app
+        </p>
+        <p>
+          We will acknowledge requests within 48 hours and respond in full within 30 days.
+        </p>
+      </article>
+    </section>
+
+    <footer>
+      <p>
+        MindHive Privacy Policy &mdash; revision dated 1 January 2026, effective upon
+        publication. This document is provided for general information and applies to
+        the App across all platforms. In the event of any conflict between this page and
+        store-listed policies, the most recent effective revision governs.
+      </p>
+      <p>© MindHive. All rights reserved. Built on AndroidX, Jetpack Compose and Firebase open-source libraries.</p>
+    </footer>
+
+  </div>
 </body>
 </html>
